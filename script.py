@@ -30,14 +30,14 @@ for damage in damages:
         updated_damages.append(str(float(damage.strip('B'))*1000000000))
     else:
         updated_damages.append('Something went wrong')
-
 print(updated_damages)
+
 
 # write your construct hurricane dictionary function here:
 hurricane_dictionary = {}
 for i in range(len(names)):
-    hurricane_dictionary[names[i]] = ({'Name': names[i], 'Month': months[i], 'Year': years[i], 'Max Sustained Wind': max_sustained_winds[i], 'Areas Affected': areas_affected[i], 'Damage': damages[i], 'Deaths': deaths[i]})
-print(hurricane_dictionary)
+    hurricane_dictionary[names[i]] = ({'Name': names[i], 'Month': months[i], 'Year': years[i], 'Max Sustained Wind': max_sustained_winds[i], 'Areas Affected': areas_affected[i], 'Damage': updated_damages[i], 'Deaths': deaths[i]})   
+# print(hurricane_dictionary)
 
 
 # write your count affected areas function here:
@@ -48,13 +48,13 @@ for areas in areas_affected:
     for area in areas:
         areas_list.append(area)
 
-areas_directory = {}
+areas_occurences = {}
 for i in range(len(areas_list)):
-  if areas_list[i] in areas_directory:
+  if areas_list[i] in areas_occurences:
     continue
   else:
-    areas_directory[areas_list[i]] = areas_list.count(areas_list[i]) 
-print(areas_directory) 
+    areas_occurences[areas_list[i]] = areas_list.count(areas_list[i]) 
+# print(areas_occurences) 
 
 
 # write your find most affected area function here:
